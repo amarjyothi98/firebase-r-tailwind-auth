@@ -8,6 +8,8 @@ export default function Signup() {
   const [password, setPassword] = useState(''); 
   const [error, setError] = useState(''); 
 
+  const {createUser} = UserAuth(); 
+
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     setError(''); 
@@ -16,6 +18,7 @@ export default function Signup() {
     } catch (e) {
       setError(e.message); 
       console.log(e.message); 
+      console.log(error);
     }
   }
 
